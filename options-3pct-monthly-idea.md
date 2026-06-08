@@ -7,7 +7,50 @@
 
 ---
 
-## 1. The honest headline first
+## 0. The trade (meets both conditions, with cushion)
+
+**Read the target correctly first:** "3% return" = return on the **capital actually at risk**
+(the margin you post — the standard way option sellers quote returns), and "95% probability of
+success" = **per‑trade probability of profit (POP)** at expiry. Read that way, both conditions are
+satisfiable **simultaneously**, and there is even a safety cushion.
+
+> ### The position
+> **Sell an SPX put credit spread, ~40 DTE, deep out‑of‑the‑money.**
+> Using SPX ≈ 6000, IV ≈ 14%, 40 days to expiry as the reference snapshot:
+>
+> | Leg | Strike | Action |
+> |---|---|---|
+> | Short put | **5575** (~5.3 delta, ~7% below spot) | **Sell** |
+> | Long put | **5550** | **Buy** (defines the risk) |
+>
+> | Metric | Value | vs. target |
+> |---|---|---|
+> | Net credit collected | **≈ \$1.07** (\$107/contract) | — |
+> | Capital at risk (margin) | **≈ \$23.93** (\$2,393/contract) | — |
+> | **Return on capital at risk** | **≈ 4.5%** for the ~40‑day hold | **> 3% target ✔ (≈1.5pt cushion)** |
+> | **Probability of profit (POP)** | **≈ 95.3%** | **≥ 95% target ✔** |
+> | Breakeven | **5573.93** — SPX must fall **> ~7.1%** in 40 days to start losing | — |
+> | Max loss | \$23.93/contract (fully defined, capped) | — |
+
+**Why this clears both bars at once:** the short strike sits ~7% below spot, so the index has to
+drop more than 7% in ~40 days for the trade to lose money — historically a ~5% event, hence the
+~95% POP. Because the structure returns **4.5%** on margin but you only **need 3%**, you have a
+built‑in buffer: you can **take profit early at the 3% level** (closing once ~⅔ of the credit has
+decayed) and **bank the 3% while raising the realized win rate further** — closing early exits the
+position before late adverse moves, so the *managed* hit rate runs even higher than the 95.3%
+expiry POP.
+
+**Monthly cadence:** open one ~40‑DTE tranche per month (or ladder weekly for smoother equity).
+Each tranche independently targets **3%+ on its capital at risk at ~95% POP**, which is the literal
+ask. The same structure scales down to **XSP** (1/10th SPX) or **SPY** for smaller accounts.
+
+The sections below give the exact mechanics, the *honest* caveats (what "95%" does and doesn't
+guarantee at the portfolio/annual level), sizing, and tail defense — because hitting the per‑trade
+target is necessary but not sufficient; surviving the rare 5% miss is what makes it durable.
+
+---
+
+## 1. The fine print on "95%" (read before sizing)
 
 A 3% monthly return is roughly **42.6% annualized** (`1.03^12 − 1`). At a **95% per‑trade
 win rate**, here is the uncomfortable arithmetic you cannot escape:

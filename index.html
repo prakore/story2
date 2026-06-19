@@ -91,6 +91,7 @@
           <li><a href="#expertise">Expertise</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#locations">Locations</a></li>
+          <li><a href="#reviews">Reviews</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="book.html" class="nav-cta" target="_blank" rel="noopener">Book Appointment</a></li>
         </ul>
@@ -367,6 +368,43 @@
       </div>
     </section>
 
+    <!-- Patient reviews (Google) -->
+    <section class="section section-tint" id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Patient experiences</p>
+          <h2>What our patients say</h2>
+          <p class="section-sub">Verified reviews from patients, straight from Google.</p>
+        </div>
+
+        <!--
+          ============================================================
+          GOOGLE REVIEWS WIDGET (Featurable — free, auto-updating)
+          ------------------------------------------------------------
+          One-time setup (no coding):
+          1. Go to https://featurable.com and sign up (free, no card).
+          2. Connect Dr. Koregol's Google Business Profile and create a widget
+             (choose a "cards/grid" layout to match the rest of the site).
+          3. Featurable gives you a widget ID like  featurable-xxxxxxxx
+          4. Replace REPLACE_WITH_WIDGET_ID below with that exact id.
+          The <script> that powers it is already included near the end of this
+          file, and the security policy (CSP) already allows featurable.com.
+          ============================================================
+        -->
+        <div class="reviews-widget reveal">
+          <div id="featurable-REPLACE_WITH_WIDGET_ID" data-featurable-async></div>
+          <noscript>
+            <p class="reviews-fallback">Please enable JavaScript to view patient reviews, or read them directly on Google below.</p>
+          </noscript>
+        </div>
+
+        <div class="reviews-cta reveal">
+          <!-- Replace with Dr. Koregol's exact Google profile/reviews link when available -->
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Dr%20Prabhakar%20C%20Koregol%20Cardiologist%20Bengaluru" class="btn btn-ghost" target="_blank" rel="noopener">Read all reviews on Google</a>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact / appointment -->
     <section class="section section-dark" id="contact">
       <div class="container contact-grid">
@@ -427,6 +465,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#locations">Locations</a></li>
+          <li><a href="#reviews">Reviews</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="book.html" target="_blank" rel="noopener">Book Appointment</a></li>
         </ul>
@@ -448,6 +487,8 @@
     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
   </a>
 
+  <!-- Featurable Google Reviews widget loader (see #reviews section for setup) -->
+  <script src="https://featurable.com/assets/bundle.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>

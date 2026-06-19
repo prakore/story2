@@ -87,3 +87,25 @@ which forwards to the secure online booking system:
 - The QR is also shown on the site in the "Book online instantly" panel of the contact section.
 
 **Tip:** scan-test the QR with a phone before printing.
+
+## Google reviews (live widget)
+
+The "What our patients say" section (`#reviews`) uses **[Featurable](https://featurable.com)** —
+a free, auto-updating Google Reviews widget (unlimited views, no watermark). One-time setup:
+
+1. Sign up at [featurable.com](https://featurable.com) (free, no card needed).
+2. Connect Dr. Koregol's **Google Business Profile** and create a widget — pick a
+   **cards/grid** layout to match the site.
+3. Copy the widget id it gives you (looks like `featurable-xxxxxxxx`).
+4. In `index.html`, find `featurable-REPLACE_WITH_WIDGET_ID` and swap in your id.
+5. (Optional) Replace the "Read all reviews on Google" link with Dr. Koregol's exact
+   Google profile URL.
+
+The widget loader script (`featurable.com/assets/bundle.js`) is already in `index.html`,
+and the **CSP already allows** `featurable.com` / `*.googleusercontent.com` (reviewer photos)
+in both `_headers` and `.htaccess`. If reviews don't appear, open the browser console — if you
+see a CSP error naming a domain, add that domain to the `script-src`/`connect-src`/`img-src`
+lists in both files.
+
+> Switched to a different provider (Trustindex, Elfsight, EmbedSocial)? Replace the widget
+> markup + script in `index.html` and update the CSP domains accordingly.

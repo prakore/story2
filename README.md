@@ -17,9 +17,9 @@ no build step. This makes it extremely fast, cheap to host, and secure by design
 - **SEO** — meta tags, Open Graph/Twitter cards, sitemap.xml, robots.txt, and
   schema.org Physician structured data for rich Google results.
 - **Security** — strict Content-Security-Policy and security headers (_headers, .htaccess),
-  forced HTTPS, no inline scripts, no third-party trackers, spam-protected contact form.
-- **Appointment form** — client-side validation, honeypot anti-spam, and AJAX submission
-  ready to connect to a no-code form backend.
+  forced HTTPS, no inline scripts, no third-party trackers.
+- **Online booking** — every "Book Appointment" button and the QR code route through
+  `book.html` to the external booking system (see below).
 
 ## Structure
 
@@ -45,19 +45,9 @@ before publishing:
 - [ ] List of hospitals/clinics and their current addresses & timings
 - [ ] Phone number(s) and any email address
 - [ ] Memberships, fellowships and awards
-- [ ] Add a real professional photo at assets/img/doctor.jpg
-      (then replace the .photo-placeholder block in index.html with an <img>)
+- [x] Professional photo added at assets/img/doctor.webp
 - [ ] Add a social share image at assets/img/og-image.png (1200x630)
 
-## Connect the appointment form
-
-The form currently posts to a placeholder. To receive submissions by email without a server:
-
-1. Create a free account at Formspree (https://formspree.io) (or Web3Forms / Basin).
-2. Copy your form endpoint URL.
-3. In index.html, replace https://formspree.io/f/your-form-id in the form action.
-
-That's it — no secrets live in this codebase.
 
 ## Deploy
 
@@ -76,7 +66,7 @@ python3 -m http.server 8000
 ## Security notes
 
 - All security headers are verifiable at securityheaders.com after deployment (target grade A).
-- The CSP allows only Google Fonts and the Formspree endpoint. If you add other services
+- The CSP allows only same-origin assets and Google Fonts. If you add other services
   (e.g. an embedded map), update the CSP in **both** _headers and .htaccess.
 - No analytics or trackers are included by default (privacy-friendly).
 

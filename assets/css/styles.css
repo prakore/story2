@@ -237,37 +237,18 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; color: var(--
 
 /* Book online + QR */
 .book-online {
-  margin-top: 2rem; padding: 1.4rem; border: 1px solid rgba(255,255,255,.18);
+  padding: 1.6rem; border: 1px solid rgba(255,255,255,.18);
   border-radius: var(--radius); background: rgba(255,255,255,.06);
-  display: flex; gap: 1.4rem; align-items: center; flex-wrap: wrap;
+  display: flex; gap: 1.6rem; align-items: center; flex-wrap: wrap;
 }
 .book-online-text { flex: 1 1 220px; }
 .book-online-text h3 { color: #fff; font-size: 1.2rem; margin-bottom: .4rem; }
 .book-online-text p { color: rgba(255,255,255,.85); font-size: .95rem; margin-bottom: 1rem; }
 .book-qr { margin: 0; text-align: center; }
-.book-qr img { background: #fff; padding: 8px; border-radius: 12px; width: 140px; height: 140px; }
+.book-qr img { background: #fff; padding: 8px; border-radius: 12px; width: 150px; height: 150px; }
 .book-qr figcaption { color: rgba(255,255,255,.85); font-size: .82rem; margin-top: .5rem; font-family: var(--font-head); font-weight: 500; }
-
-/* Form */
-.appointment-form { background: #fff; color: var(--ink); border-radius: var(--radius); padding: clamp(1.5rem, 3vw, 2.2rem); box-shadow: var(--shadow-lg); }
-.appointment-form h3 { font-size: 1.35rem; margin-bottom: 1.3rem; }
-.field { margin-bottom: 1.1rem; }
-.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.field label { display: block; font-family: var(--font-head); font-weight: 500; font-size: .92rem; margin-bottom: .4rem; }
-.field input, .field textarea {
-  width: 100%; font: inherit; padding: .75rem .9rem; border: 1.5px solid var(--line);
-  border-radius: var(--radius-sm); background: #fbfdfd; transition: border-color .15s, box-shadow .15s;
-}
-.field input:focus, .field textarea:focus { outline: none; border-color: var(--teal-600); box-shadow: 0 0 0 3px rgba(17,128,143,.15); }
-.field input:user-invalid, .field textarea:user-invalid { border-color: var(--accent); }
-.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-.form-consent { font-size: .88rem; color: var(--ink-soft); margin: .3rem 0 1.2rem; }
-.form-consent label { display: flex; gap: .55rem; align-items: flex-start; cursor: pointer; }
-.form-consent input { margin-top: .25rem; }
-.form-note { margin-top: 1rem; font-size: .92rem; font-weight: 600; min-height: 1.2em; }
-.form-note.ok { color: var(--teal-700); }
-.form-note.err { color: var(--accent-dark); }
-.form-disclaimer { margin-top: 1rem; font-size: .82rem; color: var(--muted); }
+.book-emergency { margin-top: 1.2rem; font-size: .85rem; color: rgba(255,255,255,.65); text-align: center; }
+.book-emergency strong { color: #ffd9da; }
 
 /* ===================== Footer ===================== */
 .site-footer { background: #082c34; color: rgba(255,255,255,.8); padding-top: var(--space); }
@@ -330,7 +311,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; color: var(--
 @media (max-width: 560px) {
   .cards-grid { grid-template-columns: 1fr; }
   .symptom-list { grid-template-columns: 1fr; }
-  .field-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
 }

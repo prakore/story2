@@ -1,0 +1,12 @@
+{
+  "name": "Dr. Prabhakar C. Koregol — Interventional Cardiologist",
+  "short_name": "Dr. Koregol",
+  "description": "Senior interventional cardiologist in Bengaluru. 24+ years of expert heart care.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b5563",
+  "icons": [
+    { "src": "/assets/img/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

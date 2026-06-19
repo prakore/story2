@@ -1,0 +1,11 @@
+# Netlify deployment config
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "https://www.drprabhakarkoregol.in/*"
+  to = "https://drprabhakarkoregol.in/:splat"
+  status = 301
+  force = true
+
+# Security headers are defined in the _headers file.

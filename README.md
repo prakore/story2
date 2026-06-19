@@ -79,3 +79,19 @@ python3 -m http.server 8000
 - The CSP allows only Google Fonts and the Formspree endpoint. If you add other services
   (e.g. an embedded map), update the CSP in **both** _headers and .htaccess.
 - No analytics or trackers are included by default (privacy-friendly).
+
+## Online appointment booking & QR code
+
+The "Book Appointment" buttons open the secure online booking system:
+`https://meet-my-doctor.firebaseapp.com/#/?doctor=dr-prabhakar-koregol-bangalore-cardiology`
+
+- `book.html` is a lightweight **redirect page** that forwards to that booking system.
+  Use it as a short, stable link (`https://drprabhakarkoregol.in/book.html`) — if the
+  booking provider ever changes, you only update this one file (and the buttons in `index.html`).
+- `assets/img/appointment-qr.png` and `appointment-qr.svg` are **QR codes that point to
+  `book.html`**. Print them on cards/posters; patients scan to book. Because they point to the
+  redirect page (not the booking provider directly), the QR never has to be reprinted if the
+  booking link changes.
+- The QR is also shown on the site in the "Book online instantly" panel of the contact section.
+
+**Tip:** scan-test the QR with a phone before printing.

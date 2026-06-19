@@ -138,9 +138,9 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; color: var(--
   background: linear-gradient(160deg, var(--teal-700), var(--teal-900));
   box-shadow: var(--shadow-lg);
 }
-/* Solid blue bar directly under the photo */
+/* Solid blue bar directly above the photo */
 .hero-bar {
-  position: relative; z-index: 1; height: 12px; margin-top: 16px; border-radius: 8px;
+  position: relative; z-index: 1; height: 12px; margin-bottom: 16px; border-radius: 8px;
   background: linear-gradient(90deg, var(--teal-800), var(--teal-600));
   box-shadow: 0 8px 20px -10px rgba(11,85,99,.5);
 }
@@ -151,7 +151,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; color: var(--
 }
 .photo-placeholder code { background: rgba(255,255,255,.15); padding: .15rem .4rem; border-radius: 4px; font-size: .8rem; }
 .hero-badge {
-  position: absolute; left: -12px; bottom: 64px; background: #fff; border-radius: var(--radius);
+  position: absolute; left: -12px; bottom: 36px; background: #fff; border-radius: var(--radius);
   padding: .9rem 1.2rem; box-shadow: var(--shadow); display: flex; flex-direction: column; line-height: 1.1;
   border: 1px solid var(--line);
 }
@@ -244,6 +244,19 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; color: var(--
 .contact-info strong { color: #fff; font-family: var(--font-head); }
 .contact-info a { color: #d6f0f4; }
 .contact-info div { color: rgba(255,255,255,.85); }
+
+/* Book online + QR */
+.book-online {
+  margin-top: 2rem; padding: 1.4rem; border: 1px solid rgba(255,255,255,.18);
+  border-radius: var(--radius); background: rgba(255,255,255,.06);
+  display: flex; gap: 1.4rem; align-items: center; flex-wrap: wrap;
+}
+.book-online-text { flex: 1 1 220px; }
+.book-online-text h3 { color: #fff; font-size: 1.2rem; margin-bottom: .4rem; }
+.book-online-text p { color: rgba(255,255,255,.85); font-size: .95rem; margin-bottom: 1rem; }
+.book-qr { margin: 0; text-align: center; }
+.book-qr img { background: #fff; padding: 8px; border-radius: 12px; width: 140px; height: 140px; }
+.book-qr figcaption { color: rgba(255,255,255,.85); font-size: .82rem; margin-top: .5rem; font-family: var(--font-head); font-weight: 500; }
 
 /* Form */
 .appointment-form { background: #fff; color: var(--ink); border-radius: var(--radius); padding: clamp(1.5rem, 3vw, 2.2rem); box-shadow: var(--shadow-lg); }

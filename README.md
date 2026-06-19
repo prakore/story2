@@ -82,12 +82,14 @@ python3 -m http.server 8000
 
 ## Online appointment booking & QR code
 
-The "Book Appointment" buttons open the secure online booking system:
+Every "Book Appointment" button and the QR code point to **`book.html`** (the redirect page),
+which forwards to the secure online booking system:
 `https://meet-my-doctor.firebaseapp.com/#/?doctor=dr-prabhakar-koregol-bangalore-cardiology`
 
-- `book.html` is a lightweight **redirect page** that forwards to that booking system.
-  Use it as a short, stable link (`https://drprabhakarkoregol.in/book.html`) — if the
-  booking provider ever changes, you only update this one file (and the buttons in `index.html`).
+- `book.html` is a lightweight **redirect page** and the **single source of truth** for the
+  booking link. If the booking provider ever changes, **edit only the URL inside `book.html`**
+  (3 spots: the `meta refresh`, the `canonical` link, and the fallback button). No buttons and
+  no QR codes ever need updating.
 - `assets/img/appointment-qr.png` and `appointment-qr.svg` are **QR codes that point to
   `book.html`**. Print them on cards/posters; patients scan to book. Because they point to the
   redirect page (not the booking provider directly), the QR never has to be reprinted if the

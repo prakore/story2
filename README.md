@@ -109,3 +109,13 @@ lists in both files.
 
 > Switched to a different provider (Trustindex, Elfsight, EmbedSocial)? Replace the widget
 > markup + script in `index.html` and update the CSP domains accordingly.
+
+## WhatsApp button, sticky mobile bar & map
+
+- **WhatsApp:** the floating green button uses `wa.me/919743463444` (the clinic number). If a
+  dedicated WhatsApp line is used, update the number in the `.whatsapp-fab` link in `index.html`.
+- **Sticky mobile bar:** a Call + Book Appointment bar appears at the bottom on phones only.
+- **Google Map:** the locations section embeds a keyless Google Map of the Malleswaram clinic.
+  CSP already allows `www.google.com` / `maps.google.com` frames in `_headers` and `.htaccess`.
+- **Affiliations strip** and **"What to expect on your first visit"** section were added as
+  trust/UX elements. Replace the affiliation names if any change.

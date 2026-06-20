@@ -2,7 +2,7 @@
 ## If you host on Apache, use .htaccess instead. If on Nginx, translate to add_header.
 
 /*
-  Content-Security-Policy: default-src 'self'; img-src 'self' data: https://*.googleusercontent.com https://featurable.com https://*.featurable.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://featurable.com https://*.featurable.com; connect-src 'self' https://featurable.com https://*.featurable.com; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https://*.googleusercontent.com https://featurable.com https://*.featurable.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://featurable.com https://*.featurable.com; connect-src 'self' https://featurable.com https://*.featurable.com; frame-src https://www.google.com https://maps.google.com; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin

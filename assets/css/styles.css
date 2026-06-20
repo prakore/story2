@@ -162,6 +162,23 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; color: var(--
 .stat strong { display: block; font-family: var(--font-head); font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--teal-800); }
 .stat span { color: var(--muted); font-size: .88rem; }
 
+/* ===================== Affiliations ===================== */
+.affiliations { padding: 2.5rem 0; border-bottom: 1px solid var(--line); }
+.affil-label { text-align: center; font-family: var(--font-head); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.1rem; }
+.affil-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem 1rem; }
+.affil-list li { font-family: var(--font-head); font-weight: 600; color: var(--teal-800); background: var(--teal-50); border: 1px solid #d7e7ea; border-radius: 50px; padding: .5rem 1.1rem; font-size: .92rem; }
+
+/* ===================== Map ===================== */
+.map-embed { margin-top: 2rem; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow-sm); line-height: 0; }
+.map-embed iframe { width: 100%; height: 380px; border: 0; }
+
+/* ===================== First-visit steps ===================== */
+.steps-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; counter-reset: step; }
+.step-card { position: relative; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 2.2rem 1.4rem 1.4rem; box-shadow: var(--shadow-sm); }
+.step-num { position: absolute; top: -18px; left: 1.4rem; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: #fff; font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; box-shadow: 0 6px 14px -6px rgba(229,72,77,.6); }
+.step-card h3 { font-size: 1.1rem; margin-bottom: .4rem; }
+.step-card p { color: var(--ink-soft); font-size: .94rem; }
+
 /* ===================== Sections ===================== */
 .section { padding: var(--space) 0; }
 .section-tint { background: var(--bg-tint); }
@@ -281,6 +298,21 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; color: var(--
 .back-to-top:hover { transform: translateY(-3px); background: var(--teal-900); text-decoration: none; }
 .back-to-top[hidden] { display: none; }
 
+/* WhatsApp floating button */
+.whatsapp-fab {
+  position: fixed; right: 1.2rem; bottom: 1.2rem; z-index: 95;
+  width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center;
+  background: #25d366; color: #fff; box-shadow: 0 8px 22px -6px rgba(37,211,102,.6);
+  transition: transform .2s; animation: wa-pop .4s ease-out;
+}
+.whatsapp-fab:hover { transform: scale(1.08); text-decoration: none; }
+@keyframes wa-pop { from { transform: scale(0); } to { transform: scale(1); } }
+/* lift back-to-top above the WhatsApp button */
+.back-to-top { bottom: 5.6rem; }
+
+/* Sticky mobile action bar (hidden on desktop) */
+.mobile-bar { display: none; }
+
 /* ===================== Reveal animation ===================== */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.in { opacity: 1; transform: none; }
@@ -292,8 +324,31 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; color: var(--
   .lede { max-width: none; }
   .about-grid, .warn-grid, .contact-grid { grid-template-columns: 1fr; }
   .cards-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); row-gap: 2.2rem; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.2rem 1rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 760px) {
+  /* Sticky bottom action bar */
+  .mobile-bar {
+    display: flex; gap: .6rem; position: fixed; left: 0; right: 0; bottom: 0; z-index: 96;
+    padding: .6rem .8rem calc(.6rem + env(safe-area-inset-bottom));
+    background: rgba(255,255,255,.96); backdrop-filter: blur(8px);
+    border-top: 1px solid var(--line); box-shadow: 0 -6px 20px -10px rgba(11,85,99,.25);
+  }
+  .mobile-bar-btn {
+    flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: .4rem;
+    font-family: var(--font-head); font-weight: 600; padding: .8rem; border-radius: 50px; font-size: .98rem;
+  }
+  .mb-call { flex: 0 0 34%; background: var(--teal-50); color: var(--teal-800); }
+  .mb-book { background: var(--accent); color: #fff; }
+  .mobile-bar-btn:hover { text-decoration: none; }
+  /* lift floating buttons above the bar */
+  .whatsapp-fab { bottom: 5.2rem; }
+  .back-to-top { bottom: 9.4rem; }
+  /* keep content clear of the fixed bar */
+  body { padding-bottom: 4.5rem; }
 }
 
 @media (max-width: 760px) {
@@ -315,7 +370,9 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; color: var(--
 
 @media (max-width: 560px) {
   .cards-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
   .symptom-list { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
+  .map-embed iframe { height: 300px; }
 }

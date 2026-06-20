@@ -242,7 +242,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; color: var(--
 .faq-list details p { color: var(--ink-soft); padding-bottom: 1rem; }
 
 /* Patient reviews */
-.reviews-widget { min-height: 120px; }
+.reviews-widget { }
 .reviews-fallback { text-align: center; color: var(--ink-soft); }
 .reviews-cta { text-align: center; margin-top: 2rem; }
 

@@ -1,12 +1,9 @@
 ## Security & caching headers (Netlify / Cloudflare Pages format)
 ## If you host on Apache, use .htaccess instead. If on Nginx, translate to add_header.
 
-## NOTE: Framing is temporarily allowed for review/annotation tools (MarkUp.io, Pastel, Ruttl).
-## BEFORE GOING LIVE: set `frame-ancestors` back to 'none' and restore `X-Frame-Options: DENY`.
-
 /*
-  Content-Security-Policy: default-src 'self'; img-src 'self' data: https://*.googleusercontent.com https://featurable.com https://*.featurable.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://featurable.com https://*.featurable.com; connect-src 'self' https://featurable.com https://*.featurable.com; frame-src https://www.google.com https://maps.google.com; form-action 'self'; frame-ancestors 'self' https://*.markup.io https://*.usepastel.com https://*.pastel.so https://*.ruttl.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
-  # X-Frame-Options: DENY  ← temporarily disabled for review annotation; restore before launch
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https://*.googleusercontent.com https://featurable.com https://*.featurable.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://featurable.com https://*.featurable.com; connect-src 'self' https://featurable.com https://*.featurable.com; frame-src https://www.google.com https://maps.google.com; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+  X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
